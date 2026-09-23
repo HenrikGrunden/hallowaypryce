@@ -6,18 +6,18 @@
 #   bash <(curl -sL https://www.hallowaypryce.com/assets/sig/install.sh) all              # installs every known signature found by name
 #   bash <(curl -sL https://www.hallowaypryce.com/assets/sig/install.sh) FILE "Name in Mail"
 #
-# FILE is one of: halloway, william, shinji, shinjidark, shinjiauto, shinjimono, florea, stronger
-# "all" uses these names in Mail: Halloway Pryce, William Davis, Shinji, Shinji Dark, Shinji Auto, Shinji Monogram, Florea, Stronger
+# FILE is one of: halloway, william, shinji, shinjidark, shinjiauto, shinjimono, florea, stronger, strongerorb
+# "all" uses these names in Mail: Halloway Pryce, William Davis, Shinji, Shinji Dark, Shinji Auto, Shinji Monogram, Florea, Stronger, Stronger Orb
 
 PB=${PLISTBUDDY:-/usr/libexec/PlistBuddy}
 KEY="$1"; NAME="$2"
 BASE="https://www.hallowaypryce.com/assets/sig"
-KEYS="halloway william shinji shinjidark shinjiauto shinjimono florea stronger"
+KEYS="halloway william shinji shinjidark shinjiauto shinjimono florea stronger strongerorb"
 
 default_name() {
   case "$1" in
     halloway) echo "Halloway Pryce";; william) echo "William Davis";; shinji) echo "Shinji";;
-    shinjidark) echo "Shinji Dark";; shinjiauto) echo "Shinji Auto";; shinjimono) echo "Shinji Monogram";; florea) echo "Florea";; stronger) echo "Stronger";;
+    shinjidark) echo "Shinji Dark";; shinjiauto) echo "Shinji Auto";; shinjimono) echo "Shinji Monogram";; florea) echo "Florea";; stronger) echo "Stronger";; strongerorb) echo "Stronger Orb";;
   esac
 }
 
@@ -49,7 +49,7 @@ if [ -z "$KEY" ]; then
   done | sort -u
   echo
   echo "Installera alla:  bash <(curl -sL $BASE/install.sh) all"
-  echo "Installera en:    bash <(curl -sL $BASE/install.sh) halloway|william|shinji|shinjidark|shinjiauto|shinjimono|florea|stronger \"Namn i Mail\""
+  echo "Installera en:    bash <(curl -sL $BASE/install.sh) halloway|william|shinji|shinjidark|shinjiauto|shinjimono|florea|stronger|strongerorb \"Namn i Mail\""
   exit 0
 fi
 
