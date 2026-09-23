@@ -59,9 +59,17 @@ img{max-width:100%;display:block}
 .scroll-cue{position:absolute;left:50%;bottom:36px;width:1px;height:56px;background:linear-gradient(var(--brass-light),transparent)}
 
 /* Statement */
-.statement{display:flex;flex-direction:column;align-items:center;gap:36px;padding-top:140px;padding-bottom:140px;text-align:center}
+.statement{display:flex;flex-direction:column;align-items:center;gap:36px;padding-top:140px;padding-bottom:100px;text-align:center}
 .statement blockquote{margin:0;max-width:900px;font-size:clamp(28px,3.4vw,46px);font-weight:300;line-height:1.28}
 .statement blockquote em{color:var(--brass-light)}
+
+/* Places */
+.places{display:flex;flex-direction:column;align-items:center;gap:34px;padding-top:0;padding-bottom:130px;text-align:center}
+.place-rows{display:flex;flex-direction:column;align-items:center;gap:14px}
+.place-list{display:flex;justify-content:center;align-items:center;margin:0;padding:0;list-style:none}
+.place-list li{display:flex;align-items:center;font-size:clamp(22px,2.3vw,32px);font-weight:300;font-style:italic;color:var(--ivory);white-space:nowrap}
+.place-list li + li::before{content:"";display:inline-block;width:5px;height:5px;margin:0 clamp(16px,2vw,30px);border:1px solid var(--brass-light);transform:rotate(45deg)}
+.places-note{margin:0;max-width:560px;font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.85;color:var(--dim)}
 
 /* Office */
 .office{display:flex;flex-direction:column;gap:64px;padding-top:120px;padding-bottom:140px;background:var(--forest);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
@@ -143,6 +151,11 @@ form.sent .fields{display:none}
   .hero-emblem{width:52px;height:69px}
   .hero h1{font-size:44px}
   .statement,.office,.principles,.contact{padding-top:80px;padding-bottom:80px}
+  .places{padding-bottom:80px;gap:26px}
+  .place-rows{gap:4px}
+  .place-list{flex-direction:column;gap:4px}
+  .place-list li{font-size:24px}
+  .place-list li + li::before{display:none}
   .office{gap:40px}
   .pillars{grid-template-columns:minmax(0,1fr)}
   .pillars li,.pillars li + li,.pillars li:nth-child(even){padding:28px 0;border-left:0;border-bottom:1px solid var(--hair-soft)}
@@ -178,14 +191,23 @@ form.sent .fields{display:none}
     <p class="kicker">PRIVATE OFFICE · STOCKHOLM</p>
     <h1>For those who measure <em>in generations.</em></h1>
     <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
-    <p>A private office for a small number of families, founders and principals. We hold the whole picture, so that you need not.</p>
+    <p>A private office acting for a small number of families and principals, wherever they happen to be. We hold the whole picture, so that they need not.</p>
     <a class="btn" href="#contact">REQUEST AN INTRODUCTION</a>
     <span class="scroll-cue" aria-hidden="true"></span>
   </section>
 
   <section class="statement wrap" aria-label="Our position">
     <p class="kicker">DISCRETION BY DESIGN</p>
-    <blockquote>We do not advertise. We do not name our clients. Our work is measured not in quarters, but in <em>what remains.</em></blockquote>
+    <blockquote>We do not advertise. We do not name our clients. Every hour, every season, in every residence, their affairs are <em>already in hand.</em></blockquote>
+  </section>
+
+  <section class="places wrap" aria-labelledby="places-h">
+    <p class="kicker" id="places-h">WHEREVER OUR CLIENTS ARE</p>
+    <div class="place-rows">
+      <ul class="place-list"><li>Stockholm</li><li>Geneva</li><li>Gstaad</li><li>St. Moritz</li></ul>
+      <ul class="place-list"><li>Courchevel</li><li>Monaco</li><li>Saint-Barth&#233;lemy</li></ul>
+    </div>
+    <p class="places-note">A signing in Geneva, a chalet in Gstaad, a villa on Saint-Barth&#233;lemy. Different seasons, one office, and the same quiet attention.</p>
   </section>
 
   <section id="office" class="office wrap" aria-labelledby="office-h">
@@ -194,27 +216,27 @@ form.sent .fields{display:none}
         <p class="kicker">THE OFFICE</p>
         <h2 id="office-h">One trusted counterpart. <em style="color:var(--brass-light)">Every decision that matters.</em></h2>
       </div>
-      <p>We sit beside your banks, trustees and specialist advisers, and bring order to the decisions between them. Built by people who have acquired, scaled and exited businesses themselves, and who finance and develop property for their own account.</p>
+      <p>We act for our clients continuously, beside their private banks, trustees and specialist advisers, and bring order to the decisions between them. Built by people who have acquired, scaled and exited businesses themselves, and who finance and develop property for their own account.</p>
     </div>
     <ul class="pillars">
-      <li><span class="n">I</span><h3>Transactions</h3><p>Acquisitions, disposals and exits, run end to end with the quiet precision they deserve.</p></li>
-      <li><span class="n">II</span><h3>Property</h3><p>Residential and commercial real estate, sourced off market, financed and developed with patience.</p></li>
-      <li><span class="n">III</span><h3>Enterprise</h3><p>Founder-led and consumer businesses, strengthened from the inside and positioned for what comes next.</p></li>
-      <li><span class="n">IV</span><h3>Continuity</h3><p>Structure, governance and succession, so that what has been built is carried forward intact.</p></li>
+      <li><span class="n">I</span><h3>Transactions</h3><p>Acquisitions, disposals and exits of significant holdings, run end to end with the quiet precision they deserve.</p></li>
+      <li><span class="n">II</span><h3>Property</h3><p>Residences and estates in the Alps, on the Riviera and in the Caribbean, alongside commercial property, sourced off market and held with patience.</p></li>
+      <li><span class="n">III</span><h3>Enterprise</h3><p>Operating businesses within the family&#8217;s holdings, strengthened from the inside and positioned for what comes next.</p></li>
+      <li><span class="n">IV</span><h3>Continuity</h3><p>Structure, governance and succession, so that wealth built in one generation is carried intact into the next.</p></li>
     </ul>
   </section>
 
   <section class="principles wrap" aria-label="Principles">
     <div><p class="kicker">I</p><h3>Discretion</h3><p>Nothing is shared that need not be. Nothing is published at all.</p></div>
     <div><p class="kicker">II</p><h3>Permanence</h3><p>Decisions are weighed against decades, not the next reporting date.</p></div>
-    <div><p class="kicker">III</p><h3>Alignment</h3><p>We take on few relationships, and we stand on the same side of the table.</p></div>
+    <div><p class="kicker">III</p><h3>Alignment</h3><p>We act for few, and only ever on one side of the table: theirs.</p></div>
   </section>
 
   <section id="contact" class="contact wrap" aria-labelledby="contact-h">
     <div class="contact-intro">
       <p class="kicker">INTRODUCTION</p>
       <h2 id="contact-h">Most relationships begin with a single conversation.</h2>
-      <p>Enquiries are received in strict confidence and answered personally within one working day. New relationships are accepted by introduction or after an initial meeting.</p>
+      <p>Enquiries are received in strict confidence and answered personally, in any time zone, within one working day. New relationships are accepted by introduction or after an initial meeting.</p>
     </div>
 
     <form id="enquiry" novalidate>
