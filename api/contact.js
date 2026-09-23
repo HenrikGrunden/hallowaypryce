@@ -8,6 +8,7 @@
 //                              (the domain must be verified in Resend)
 
 const MATTERS = [
+  'Legal',
   'Strategy & Growth',
   'E-commerce & Brand',
   'M&A & Transactions',

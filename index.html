@@ -3,13 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Halloway Pryce</title>
-<meta name="description" content="Halloway Pryce advises founders, private clients and businesses on strategy, growth and matters that call for discretion and precision.">
+<title>Halloway Pryce | M&amp;A, Strategy &amp; Commercial Advisory in Stockholm</title>
+<meta name="description" content="Halloway Pryce advises founders, private clients and businesses in Stockholm and internationally on M&amp;A, strategy and growth, e-commerce and real estate, with discretion and precision.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.hallowaypryce.com/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<meta property="og:title" content="Halloway Pryce">
-<meta property="og:description" content="Considered counsel, quietly delivered.">
+<meta property="og:site_name" content="Halloway Pryce">
+<meta property="og:title" content="Halloway Pryce | M&amp;A, Strategy &amp; Commercial Advisory">
+<meta property="og:description" content="Considered counsel, quietly delivered. Advisory on M&amp;A, strategy, e-commerce and real estate for founders, private clients and businesses.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hallowaypryce.com">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://www.hallowaypryce.com/">
+<meta property="og:image" content="https://www.hallowaypryce.com/assets/hero.jpg">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="1333">
+<meta property="og:image:alt" content="Halloway Pryce">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Halloway Pryce",
+  "url": "https://www.hallowaypryce.com/",
+  "logo": "https://www.hallowaypryce.com/assets/emblem.svg",
+  "image": "https://www.hallowaypryce.com/assets/hero.jpg",
+  "description": "Advisory on M&A and transactions, strategy and growth, e-commerce and real estate for founders, private clients and businesses.",
+  "email": "info@hallowaypryce.com",
+  "telephone": "+46737177549",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Eriksbergsgatan 12A",
+    "postalCode": "114 30",
+    "addressLocality": "Stockholm",
+    "addressCountry": "SE"
+  },
+  "areaServed": ["SE", "GB", "Europe"],
+  "knowsAbout": ["Mergers and acquisitions", "Transaction advisory", "Business strategy", "E-commerce", "Brand building", "Real estate", "Commercial agreements"]
+}
+</script>
 <meta name="theme-color" content="#D8D8D8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +84,15 @@ img{max-width:100%;display:block}
 .hero-divider i{display:block;width:56px;height:1px;background:var(--brass)}
 .hero-divider b{display:block;width:6px;height:6px;border:1px solid var(--brass);transform:rotate(45deg)}
 .hero p{margin:0;max-width:460px;font-family:var(--sans);font-weight:300;font-size:15.5px;line-height:1.7;color:var(--muted)}
-.hero .btn{margin-top:12px}
+.hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:12px}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--ivory)}
+.hero-more{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
+.hero-more span{font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;color:var(--muted)}
+.hero-more ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin:0;padding:0;list-style:none}
+.hero-more a{position:relative;padding-left:14px;font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+.hero-more a::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;margin-top:-2px;border:1px solid var(--brass);transform:rotate(45deg)}
+.hero-more a:hover{color:var(--brass-text)}
 
 /* Expertise */
 .expertise{display:flex;flex-direction:column;gap:36px;padding-top:88px;padding-bottom:96px;background:var(--forest);color:var(--on-forest)}
@@ -150,6 +189,19 @@ form.sent .fields{display:none}
     <h1>Considered counsel, <em>quietly</em> delivered.</h1>
     <div class="hero-divider" aria-hidden="true"><i></i><b></b><i></i></div>
     <p>We advise founders, private clients and businesses on strategy, growth and the matters that call for discretion and precision.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="#contact" data-matter="Legal">LEGAL</a>
+      <a class="btn btn-ghost" href="#contact" data-matter="M&amp;A &amp; Transactions">M&amp;A ADVISORY</a>
+    </div>
+    <nav class="hero-more" aria-label="Other areas">
+      <span>OR ASK ABOUT</span>
+      <ul>
+        <li><a href="#contact" data-matter="Strategy &amp; Growth">Strategy &amp; Growth</a></li>
+        <li><a href="#contact" data-matter="E-commerce &amp; Brand">E-commerce &amp; Brand</a></li>
+        <li><a href="#contact" data-matter="Real Estate">Real Estate</a></li>
+        <li><a href="#contact" data-matter="Corporate &amp; Commercial">Corporate &amp; Commercial</a></li>
+      </ul>
+    </nav>
   </section>
 
   <section id="expertise" class="expertise wrap" aria-labelledby="expertise-h">
@@ -190,6 +242,7 @@ form.sent .fields{display:none}
             <label for="matter">NATURE OF ENQUIRY</label>
             <select id="matter" name="matter" required>
               <option value="">Please select</option>
+              <option>Legal</option>
               <option>Strategy &amp; Growth</option>
               <option>E-commerce &amp; Brand</option>
               <option>M&amp;A &amp; Transactions</option>
@@ -249,6 +302,11 @@ form.sent .fields{display:none}
   var btn = form.querySelector('button[type=submit]');
 
   function say(msg, kind){ status.textContent = msg; status.className = 'status ' + (kind || ''); }
+
+  // CTA links preselect the nature of enquiry before scrolling to the form.
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-matter]'), function(a){
+    a.addEventListener('click', function(){ form.elements.matter.value = a.getAttribute('data-matter'); });
+  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
