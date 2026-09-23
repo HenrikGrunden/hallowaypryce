@@ -5,7 +5,7 @@
 #   bash <(curl -sL https://www.hallowaypryce.com/assets/sig/install.sh) FILE "Name in Mail"
 #   bash <(curl -sL https://www.hallowaypryce.com/assets/sig/install.sh)          # lists signatures
 #
-# FILE is one of: halloway, william, shinji, florea
+# FILE is one of: halloway, william, shinji, florea, stronger
 
 PB=${PLISTBUDDY:-/usr/libexec/PlistBuddy}
 KEY="$1"; NAME="$2"
@@ -35,11 +35,11 @@ if [ -z "$KEY" ] || [ -z "$NAME" ]; then
   echo "Signaturer i Mail:"
   list | cut -d'|' -f1 | sort -u | sed 's/^/  - /'
   echo
-  echo "Användning: bash <(curl -sL $BASE/install.sh) halloway|william|shinji|florea \"Namn i Mail\""
+  echo "Användning: bash <(curl -sL $BASE/install.sh) halloway|william|shinji|florea|stronger \"Namn i Mail\""
   exit 0
 fi
 
-case "$KEY" in halloway|william|shinji|florea) ;; *) echo "Okänd signatur: $KEY (halloway, william, shinji, florea)"; exit 1;; esac
+case "$KEY" in halloway|william|shinji|florea|stronger) ;; *) echo "Okänd signatur: $KEY (halloway, william, shinji, florea, stronger)"; exit 1;; esac
 
 if pgrep -x Mail >/dev/null; then
   echo "Avsluta Mail först (Cmd+Q) och kör kommandot igen."
