@@ -61,8 +61,20 @@ fi
 backup="$HOME/Desktop/Signatur-backup"; mkdir -p "$backup"
 stamp=$(date +%Y%m%d-%H%M%S)
 
-header() {
-  printf 'Content-Transfer-Encoding: 7bit\nContent-Type: text/html;\n\tcharset=us-ascii\nMessage-Id: <%s>\nMime-Version: 1.0 (Mac OS X Mail 16.0)\n\n' "$(uuidgen 2>/dev/null || date +%s)"
+# Always write a clean single-part HTML signature. Mail sometimes creates empty
+# signatures as multipart/related; reusing that header breaks the file.
+write_sig() {
+  local f="$1" body="$2" msgid=""
+  [ -f "$f" ] && msgid=$(grep -m1 -i '^Message-Id:' "$f" | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r')
+  [ -z "$msgid" ] && msgid="<$(uuidgen 2>/dev/null || date +%s)>"
+  {
+    printf 'Content-Transfer-Encoding: 7bit\n'
+    printf 'Content-Type: text/html;\n\tcharset=us-ascii\n'
+    printf 'Message-Id: %s\n' "$msgid"
+    printf 'Mime-Version: 1.0 (Mac OS X Mail 16.0)\n'
+    printf '\n'
+    printf '%s\n' "$body"
+  } > "$f.tmp"
 }
 
 # install_one KEY NAME [quiet-if-missing]
@@ -83,18 +95,12 @@ install_one() {
   local body
   body=$(curl -fsL "$BASE/$key.txt") || { echo "Kunde inte hämta $key.txt"; return 1; }
   while IFS='|' read -r n id d; do
-    local f="$d/$id.mailsignature" head=""
+    local f="$d/$id.mailsignature"
     if [ -f "$f" ]; then
       cp "$f" "$backup/$n-$stamp.mailsignature"
       chflags nouchg "$f"
-      head=$(awk '1;/^\r?$/{exit}' "$f")
     fi
-    # Missing or empty file (e.g. only the name synced via iCloud): write a fresh header.
-    if ! printf '%s' "$head" | grep -q '^Content-Type:'; then
-      { header; printf '%s\n' "$body"; } > "$f.tmp"
-    else
-      { printf '%s\n' "$head"; printf '%s\n' "$body"; } > "$f.tmp"
-    fi
+    write_sig "$f" "$body"
     mv "$f.tmp" "$f" && chflags uchg "$f"
   done <<< "$matches"
   echo "  KLART: \"$name\" har nu signaturen $key"
