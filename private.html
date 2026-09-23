@@ -190,6 +190,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--b
 .status{margin:0;font-family:var(--sans);font-size:14px;line-height:1.6;min-height:1.6em}
 .status.ok{color:var(--ivory)}
 .status.err{color:#E3A3A3}
+.fields{display:flex;flex-direction:column;gap:20px}
 form.sent .fields{display:none}
 
 /* Footer */
@@ -319,7 +320,7 @@ form.sent .fields{display:none}
     </div>
 
     <form id="enquiry" novalidate>
-      <div class="fields" style="display:flex;flex-direction:column;gap:20px">
+      <div class="fields">
         <div class="row">
           <div class="field"><label for="name">FULL NAME</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
           <div class="field"><label for="email">EMAIL</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
