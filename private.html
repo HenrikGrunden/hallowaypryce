@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Halloway Pryce | Private Office</title>
+<meta name="description" content="A private office for a small number of families, founders and principals.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#16211F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --night:#16211F; --forest:#1C2A27; --deep:#111A18;
+  --ivory:#EEF0EC; --mist:#A9B4AE; --dim:#7D8A84;
+  --brass:#9A7B4F; --brass-light:#C4A574;
+  --hair:rgba(196,165,116,.28); --hair-soft:rgba(238,240,236,.12);
+  --serif:"Cormorant Garamond",Garamond,"Times New Roman",serif;
+  --sans:Jost,"Helvetica Neue",Helvetica,sans-serif;
+  --pad:80px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ivory);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+a{color:var(--ivory)}
+a:hover{color:var(--brass-light)}
+:focus-visible{outline:2px solid var(--brass-light);outline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{padding-left:max(var(--pad),env(safe-area-inset-left));padding-right:max(var(--pad),env(safe-area-inset-right))}
+.kicker{margin:0;font-family:var(--sans);font-size:10.5px;font-weight:400;letter-spacing:.42em;color:var(--brass-light)}
+.rule{display:flex;align-items:center;gap:14px}
+.rule i{display:block;width:64px;height:1px;background:var(--brass)}
+.rule b{display:block;width:6px;height:6px;border:1px solid var(--brass-light);transform:rotate(45deg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 38px;background:transparent;color:var(--ivory);border:0;box-shadow:inset 0 0 0 1px var(--brass-light);border-radius:0;text-decoration:none;font-family:var(--sans);font-size:11px;letter-spacing:.32em;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:var(--brass-light);color:var(--deep)}
+.btn[disabled]{opacity:.6;cursor:progress}
+
+/* Header */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:max(26px,env(safe-area-inset-top));padding-bottom:26px}
+.lockup{display:flex;align-items:center;gap:16px;text-decoration:none}
+.lockup img{width:30px;height:40px}
+.lockup .divider{width:1px;height:30px;background:var(--brass-light);opacity:.45}
+.lockup .word{font-size:18px;font-weight:500;letter-spacing:.2em;line-height:1;color:var(--ivory)}
+.site-nav{display:flex;gap:40px;font-family:var(--sans);font-size:10.5px;letter-spacing:.32em}
+.site-nav a{text-decoration:none;padding:10px 0;color:var(--mist)}
+.site-nav a:hover{color:var(--ivory)}
+
+/* Hero */
+.hero{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;min-height:100vh;min-height:100svh;padding-top:140px;padding-bottom:120px;text-align:center;background:linear-gradient(180deg,rgba(17,26,24,.72) 0%,rgba(17,26,24,.55) 45%,rgba(22,33,31,1) 100%),url("/assets/hero.jpg") center 30%/cover no-repeat}
+.hero-emblem{width:66px;height:88px}
+.hero h1{margin:0;max-width:880px;font-size:clamp(44px,6.4vw,92px);font-weight:300;line-height:1.02;letter-spacing:-.005em}
+.hero h1 em{font-style:italic;color:var(--brass-light)}
+.hero p{margin:0;max-width:520px;font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.85;color:var(--mist)}
+.hero .btn{margin-top:10px}
+.scroll-cue{position:absolute;left:50%;bottom:36px;width:1px;height:56px;background:linear-gradient(var(--brass-light),transparent)}
+
+/* Statement */
+.statement{display:flex;flex-direction:column;align-items:center;gap:36px;padding-top:140px;padding-bottom:140px;text-align:center}
+.statement blockquote{margin:0;max-width:900px;font-size:clamp(28px,3.4vw,46px);font-weight:300;line-height:1.28}
+.statement blockquote em{color:var(--brass-light)}
+
+/* Office */
+.office{display:flex;flex-direction:column;gap:64px;padding-top:120px;padding-bottom:140px;background:var(--forest);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.office-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end}
+.office-head h2{margin:0;font-size:clamp(34px,3.8vw,54px);font-weight:300;line-height:1.1}
+.office-head p{margin:0;max-width:480px;font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.85;color:var(--mist)}
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:0;list-style:none;border-top:1px solid var(--hair)}
+.pillars li{display:flex;flex-direction:column;gap:18px;padding:40px 32px 8px 0}
+.pillars li + li{padding-left:32px;border-left:1px solid var(--hair-soft)}
+.pillars .n{font-family:var(--sans);font-size:10.5px;letter-spacing:.32em;color:var(--brass-light)}
+.pillars h3{margin:0;font-size:28px;font-weight:400;line-height:1.15}
+.pillars p{margin:0;font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.8;color:var(--mist)}
+
+/* Principles */
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-top:120px;padding-bottom:120px;text-align:center}
+.principles div{display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 32px}
+.principles div + div{border-left:1px solid var(--hair-soft)}
+.principles h3{margin:0;font-size:34px;font-weight:300;font-style:italic;color:var(--ivory)}
+.principles p{margin:0;max-width:280px;font-family:var(--sans);font-weight:300;font-size:13.5px;line-height:1.8;color:var(--dim)}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:96px;padding-top:120px;padding-bottom:120px;background:var(--deep);border-top:1px solid var(--hair)}
+.contact-intro{display:flex;flex-direction:column;gap:24px}
+.contact h2{margin:0;font-size:clamp(34px,3.6vw,50px);font-weight:300;line-height:1.1}
+.contact-intro p{margin:0;max-width:400px;font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.85;color:var(--mist)}
+form{display:flex;flex-direction:column;gap:20px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+label{font-family:var(--sans);font-size:10px;letter-spacing:.3em;color:var(--dim)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;min-height:46px;padding:0 0 0 2px;border:0;border-bottom:1px solid rgba(238,240,236,.25);border-radius:0;background:transparent;font-family:var(--sans);font-size:16px;font-weight:300;color:var(--ivory);-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C4A574' stroke-width='1.2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;padding-right:28px}
+select option{color:#1C2A27}
+textarea{padding:12px 2px;min-height:110px;resize:vertical;line-height:1.6}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--brass-light)}
+.consent{display:flex;align-items:flex-start;gap:12px}
+.consent input{width:18px;height:18px;margin:3px 0 0;flex:none;accent-color:var(--brass-light)}
+.consent label{font-weight:300;font-size:13px;letter-spacing:0;line-height:1.6;color:var(--dim)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.status{margin:0;font-family:var(--sans);font-size:14px;line-height:1.6;min-height:1.6em}
+.status.ok{color:var(--ivory)}
+.status.err{color:#E3A3A3}
+form.sent .fields{display:none}
+
+/* Footer */
+.site-footer{display:flex;flex-direction:column;gap:28px;padding-top:56px;padding-bottom:max(56px,env(safe-area-inset-bottom));background:var(--deep);font-family:var(--sans);font-size:12px;line-height:1.7;color:var(--dim)}
+.site-footer p{margin:0}
+.site-footer a{color:var(--dim);text-decoration:none}
+.site-footer a:hover{color:var(--ivory)}
+.foot-cols{display:grid;grid-template-columns:repeat(2,minmax(0,220px)) minmax(0,1fr);gap:48px;padding-top:40px;border-top:1px solid var(--hair-soft)}
+.foot-col{display:flex;flex-direction:column;gap:2px}
+.foot-col address{font-style:normal}
+.foot-label{font-size:10px;letter-spacing:.32em;color:var(--brass-light);margin-bottom:8px!important}
+.foot-lockup{justify-self:end;align-self:start;white-space:nowrap}
+.foot-lockup .word{font-family:var(--serif)}
+.foot-copy{font-size:11px}
+
+@media (max-width:1100px){
+  :root{--pad:48px}
+  .pillars{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pillars li,.pillars li + li{padding:36px 24px 28px 0;border-left:0}
+  .pillars li:nth-child(even){padding-left:24px;border-left:1px solid var(--hair-soft)}
+  .contact{grid-template-columns:minmax(0,1fr);gap:56px}
+  .office-head{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+@media (max-width:640px){
+  :root{--pad:22px}
+  .site-nav{display:none}
+  .hero .kicker{font-size:9.5px;letter-spacing:.3em}
+  .lockup .word{font-size:15px}
+  .hero{gap:24px;padding-top:120px;padding-bottom:110px}
+  .hero-emblem{width:52px;height:69px}
+  .hero h1{font-size:44px}
+  .statement,.office,.principles,.contact{padding-top:80px;padding-bottom:80px}
+  .office{gap:40px}
+  .pillars{grid-template-columns:minmax(0,1fr)}
+  .pillars li,.pillars li + li,.pillars li:nth-child(even){padding:28px 0;border-left:0;border-bottom:1px solid var(--hair-soft)}
+  .principles{grid-template-columns:minmax(0,1fr);gap:48px}
+  .principles div + div{border-left:0}
+  .row{grid-template-columns:minmax(0,1fr)}
+  .foot-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+  .foot-lockup{grid-column:1/-1;gap:16px;margin-top:8px}
+  .foot-lockup img{width:39px;height:52px}
+  .foot-lockup .divider{height:40px}
+  .foot-lockup .word{font-size:19px;letter-spacing:.16em}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="site-header wrap">
+  <a class="lockup" href="#" aria-label="Halloway Pryce, top">
+    <img src="/assets/emblem-light.svg" alt="" width="30" height="40">
+    <span class="divider" aria-hidden="true"></span>
+    <span class="word">HALLOWAY PRYCE</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#office">THE OFFICE</a>
+    <a href="#contact">INTRODUCTION</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <img class="hero-emblem" src="/assets/emblem-light.svg" alt="" width="66" height="88">
+    <p class="kicker">PRIVATE OFFICE · STOCKHOLM</p>
+    <h1>For those who measure <em>in generations.</em></h1>
+    <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
+    <p>A private office for a small number of families, founders and principals. We hold the whole picture, so that you need not.</p>
+    <a class="btn" href="#contact">REQUEST AN INTRODUCTION</a>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </section>
+
+  <section class="statement wrap" aria-label="Our position">
+    <p class="kicker">DISCRETION BY DESIGN</p>
+    <blockquote>We do not advertise. We do not name our clients. Our work is measured not in quarters, but in <em>what remains.</em></blockquote>
+  </section>
+
+  <section id="office" class="office wrap" aria-labelledby="office-h">
+    <div class="office-head">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <p class="kicker">THE OFFICE</p>
+        <h2 id="office-h">One trusted counterpart. <em style="color:var(--brass-light)">Every decision that matters.</em></h2>
+      </div>
+      <p>We sit beside your banks, trustees and specialist advisers, and bring order to the decisions between them. Built by people who have acquired, scaled and exited businesses themselves, and who finance and develop property for their own account.</p>
+    </div>
+    <ul class="pillars">
+      <li><span class="n">I</span><h3>Transactions</h3><p>Acquisitions, disposals and exits, run end to end with the quiet precision they deserve.</p></li>
+      <li><span class="n">II</span><h3>Property</h3><p>Residential and commercial real estate, sourced off market, financed and developed with patience.</p></li>
+      <li><span class="n">III</span><h3>Enterprise</h3><p>Founder-led and consumer businesses, strengthened from the inside and positioned for what comes next.</p></li>
+      <li><span class="n">IV</span><h3>Continuity</h3><p>Structure, governance and succession, so that what has been built is carried forward intact.</p></li>
+    </ul>
+  </section>
+
+  <section class="principles wrap" aria-label="Principles">
+    <div><p class="kicker">I</p><h3>Discretion</h3><p>Nothing is shared that need not be. Nothing is published at all.</p></div>
+    <div><p class="kicker">II</p><h3>Permanence</h3><p>Decisions are weighed against decades, not the next reporting date.</p></div>
+    <div><p class="kicker">III</p><h3>Alignment</h3><p>We take on few relationships, and we stand on the same side of the table.</p></div>
+  </section>
+
+  <section id="contact" class="contact wrap" aria-labelledby="contact-h">
+    <div class="contact-intro">
+      <p class="kicker">INTRODUCTION</p>
+      <h2 id="contact-h">Most relationships begin with a single conversation.</h2>
+      <p>Enquiries are received in strict confidence and answered personally within one working day. New relationships are accepted by introduction or after an initial meeting.</p>
+    </div>
+
+    <form id="enquiry" novalidate>
+      <div class="fields" style="display:flex;flex-direction:column;gap:20px">
+        <div class="row">
+          <div class="field"><label for="name">FULL NAME</label><input id="name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+          <div class="field"><label for="email">EMAIL</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="phone">TELEPHONE (OPTIONAL)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+          <div class="field">
+            <label for="matter">NATURE OF ENQUIRY</label>
+            <select id="matter" name="matter" required>
+              <option value="">Please select</option>
+              <option value="Private Client">Family &amp; Private Office</option>
+              <option value="M&amp;A &amp; Transactions">Transactions</option>
+              <option value="Real Estate">Property</option>
+              <option value="Strategy &amp; Growth">Enterprise</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">IN A FEW WORDS</label><textarea id="message" name="message" required maxlength="5000"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree that my details will be handled in line with the privacy notice.</label>
+        </div>
+        <div><button class="btn" type="submit">SEND IN CONFIDENCE</button></div>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <div class="foot-cols">
+    <div class="foot-col">
+      <p class="foot-label">OFFICE</p>
+      <address>Eriksbergsgatan 12A<br>SE-114 30 Stockholm<br>Sweden</address>
+    </div>
+    <div class="foot-col">
+      <p class="foot-label">CORRESPONDENCE</p>
+      <p><a href="mailto:info@hallowaypryce.com">info@hallowaypryce.com</a><br><a href="tel:+46737177549">00 46 73 717 75 49</a></p>
+    </div>
+    <a class="lockup foot-lockup" href="#" aria-label="Halloway Pryce, back to top">
+      <img src="/assets/emblem-light.svg" alt="" width="30" height="40">
+      <span class="divider" aria-hidden="true"></span>
+      <span class="word">HALLOWAY PRYCE</span>
+    </a>
+  </div>
+  <p class="foot-copy">© <span id="year">2026</span> Halloway Pryce · <a href="/privacy">Privacy</a> · <a href="/cookies">Cookies</a></p>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var form = document.getElementById('enquiry');
+  var status = document.getElementById('status');
+  var btn = form.querySelector('button[type=submit]');
+
+  function say(msg, kind){ status.textContent = msg; status.className = 'status ' + (kind || ''); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements;
+    if (!f.name.value.trim()) { say('Please enter your full name.', 'err'); f.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.value.trim())) { say('Please enter a valid email address.', 'err'); f.email.focus(); return; }
+    if (!f.matter.value) { say('Please choose the nature of your enquiry.', 'err'); f.matter.focus(); return; }
+    if (!f.message.value.trim()) { say('Please tell us briefly how we can help.', 'err'); f.message.focus(); return; }
+    if (!f.consent.checked) { say('Please agree to the privacy notice to send your enquiry.', 'err'); f.consent.focus(); return; }
+
+    btn.disabled = true; btn.textContent = 'SENDING…'; say('');
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: f.name.value.trim(), email: f.email.value.trim(), phone: f.phone.value.trim(),
+        matter: f.matter.value, message: f.message.value.trim(),
+        consent: f.consent.checked, company: f.company.value
+      })
+    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ return { ok: r.ok, d: d }; }); })
+      .then(function(res){
+        if (res.ok) {
+          form.classList.add('sent');
+          say('Thank you. Your enquiry has been received in confidence, and we will reply within one working day.', 'ok');
+        } else {
+          say(res.d.error || 'Your enquiry could not be sent. Please email info@hallowaypryce.com directly.', 'err');
+          btn.disabled = false; btn.textContent = 'SEND IN CONFIDENCE';
+        }
+      })
+      .catch(function(){
+        say('Your enquiry could not be sent. Please check your connection or email info@hallowaypryce.com directly.', 'err');
+        btn.disabled = false; btn.textContent = 'SEND IN CONFIDENCE';
+      });
+  });
+})();
+</script>
+</body>
+</html>
