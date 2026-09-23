@@ -87,13 +87,7 @@ img{max-width:100%;display:block}
 .hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:12px}
 .btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--ivory)}
-.hero-more{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
-.hero-more span{font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;color:var(--muted)}
-.hero-more ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin:0;padding:0;list-style:none}
-.hero-more a{position:relative;padding-left:14px;font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.04em;color:var(--ink);text-decoration:none}
-.hero-more a::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;margin-top:-2px;border:1px solid var(--brass);transform:rotate(45deg)}
-.hero-more a:hover{color:var(--brass-text)}
-.hero-emblem{width:64px;height:65px;margin-top:28px}
+.hero-emblem{width:64px;height:65px;margin-bottom:6px}
 
 /* Expertise */
 .expertise{display:flex;flex-direction:column;gap:36px;padding-top:88px;padding-bottom:96px;background:var(--forest);color:var(--on-forest)}
@@ -129,7 +123,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none;box
 form.sent .fields{display:none}
 
 /* Footer */
-.foot-brand{display:flex;justify-content:center;padding-top:24px;padding-bottom:max(56px,env(safe-area-inset-bottom))}
+.foot-brand{display:flex;justify-content:flex-end;padding-top:24px;padding-bottom:max(56px,env(safe-area-inset-bottom))}
 .site-footer{display:flex;flex-direction:column;gap:28px;padding-top:44px;padding-bottom:32px;font-family:var(--sans);font-size:12px;line-height:1.7;color:var(--muted)}
 .site-footer p{margin:0}
 .site-footer a{color:var(--muted);text-decoration:none}
@@ -154,7 +148,7 @@ form.sent .fields{display:none}
   .hero{padding-top:120px;padding-bottom:80px;background-size:auto 130%;background-position:center top}
   .hero h1{font-size:32px}
   .hero p{font-size:17px}
-  .hero-emblem{width:54px;height:55px;margin-top:20px}
+  .hero-emblem{width:54px;height:55px;margin-bottom:2px}
   .expertise{padding-top:64px;padding-bottom:64px}
   .expertise{gap:28px}
   .expertise-cols{grid-template-columns:minmax(0,1fr);gap:12px}
@@ -188,6 +182,7 @@ form.sent .fields{display:none}
 
 <main>
   <section class="hero wrap">
+    <img class="hero-emblem" src="/assets/emblem-hero.svg" alt="" width="64" height="65">
     <h1>Considered counsel, <em>quietly</em> delivered.</h1>
     <div class="hero-divider" aria-hidden="true"><i></i><b></b><i></i></div>
     <p>We advise founders, private clients and businesses on strategy, growth and the matters that call for discretion and precision.</p>
@@ -195,16 +190,6 @@ form.sent .fields{display:none}
       <a class="btn" href="#contact" data-matter="Legal">LEGAL</a>
       <a class="btn btn-ghost" href="#contact" data-matter="M&amp;A &amp; Transactions">M&amp;A ADVISORY</a>
     </div>
-    <nav class="hero-more" aria-label="Other areas">
-      <span>OR ASK ABOUT</span>
-      <ul>
-        <li><a href="#contact" data-matter="Strategy &amp; Growth">Strategy &amp; Growth</a></li>
-        <li><a href="#contact" data-matter="E-commerce &amp; Brand">E-commerce &amp; Brand</a></li>
-        <li><a href="#contact" data-matter="Real Estate">Real Estate</a></li>
-        <li><a href="#contact" data-matter="Corporate &amp; Commercial">Corporate &amp; Commercial</a></li>
-      </ul>
-    </nav>
-    <img class="hero-emblem" src="/assets/emblem-white.svg" alt="" width="64" height="65">
   </section>
 
   <section id="expertise" class="expertise wrap" aria-labelledby="expertise-h">
