@@ -2,5 +2,5 @@
 <tr><td style="padding:0 0 12px 0;"><img src="https://www.hallowaypryce.com/assets/sig/halloway.png" width="267" height="40" alt="Halloway Pryce" style="display:block;border:0;width:267px;height:40px;"></td></tr>
 <tr><td style="font-family:Helvetica, Arial, sans-serif;font-size:11px;line-height:16px;letter-spacing:0.22em;color:#2B2B2B;padding:0 0 8px 1px;">WILLIAM DAVIS</td></tr>
 <tr><td style="font-family:Helvetica, Arial, sans-serif;font-size:11px;line-height:17px;color:#7A7A7A;"><a href="mailto:wd@hallowaypryce.com" style="color:#7A7A7A;text-decoration:none;">wd@hallowaypryce.com</a></td></tr>
-<tr><td style="font-family:Helvetica, Arial, sans-serif;font-size:11px;line-height:17px;color:#7A7A7A;">Eriksbergsgatan 12A, SE-114 30 Stockholm &nbsp;&#183;&nbsp; <a href="https://hallowaypryce.com" style="color:#7A7A7A;text-decoration:none;">hallowaypryce.com</a></td></tr>
+<tr><td style="font-family:Helvetica, Arial, sans-serif;font-size:11px;line-height:17px;color:#7A7A7A;">Eriksbergsgatan 12A, SE-114 30 Stockholm &nbsp;&#183;&nbsp; <a href="https://www.hallowaypryce.com/private" style="color:#7A7A7A;text-decoration:none;">hallowaypryce.com</a></td></tr>
 </table></body>
