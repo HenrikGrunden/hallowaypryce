@@ -1,9 +1,9 @@
 // Vercel serverless function: POST /api/contact
-// Sends website enquiries to legal@hallowaypryce.com via Resend (https://resend.com).
+// Sends website enquiries to info@hallowaypryce.com via Resend (https://resend.com).
 //
 // Environment variables (set in Vercel → Project → Settings → Environment Variables):
 //   RESEND_API_KEY   required  API key from Resend
-//   CONTACT_TO       optional  defaults to legal@hallowaypryce.com
+//   CONTACT_TO       optional  defaults to info@hallowaypryce.com
 //   CONTACT_FROM     optional  defaults to "Halloway Pryce Website <website@hallowaypryce.com>"
 //                              (the domain must be verified in Resend)
 
@@ -60,10 +60,10 @@ module.exports = async function handler(req, res) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error('RESEND_API_KEY is not set');
-    return res.status(500).json({ error: 'Your enquiry could not be sent. Please email legal@hallowaypryce.com directly.' });
+    return res.status(500).json({ error: 'Your enquiry could not be sent. Please email info@hallowaypryce.com directly.' });
   }
 
-  const to = process.env.CONTACT_TO || 'legal@hallowaypryce.com';
+  const to = process.env.CONTACT_TO || 'info@hallowaypryce.com';
   const from = process.env.CONTACT_FROM || 'Halloway Pryce Website <website@hallowaypryce.com>';
 
   const text = [
@@ -108,11 +108,11 @@ module.exports = async function handler(req, res) {
 
     if (!r.ok) {
       console.error('Resend error', r.status, await r.text());
-      return res.status(502).json({ error: 'Your enquiry could not be sent. Please email legal@hallowaypryce.com directly.' });
+      return res.status(502).json({ error: 'Your enquiry could not be sent. Please email info@hallowaypryce.com directly.' });
     }
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Send failed', err);
-    return res.status(502).json({ error: 'Your enquiry could not be sent. Please email legal@hallowaypryce.com directly.' });
+    return res.status(502).json({ error: 'Your enquiry could not be sent. Please email info@hallowaypryce.com directly.' });
   }
 };

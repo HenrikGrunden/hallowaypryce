@@ -274,12 +274,12 @@ form.sent .fields{display:none}
           form.classList.add('sent');
           say('Thank you. Your enquiry has been sent, and we will reply within one working day.', 'ok');
         } else {
-          say(res.d.error || 'Your enquiry could not be sent. Please email legal@hallowaypryce.com directly.', 'err');
+          say(res.d.error || 'Your enquiry could not be sent. Please email info@hallowaypryce.com directly.', 'err');
           btn.disabled = false; btn.textContent = 'SEND ENQUIRY';
         }
       })
       .catch(function(){
-        say('Your enquiry could not be sent. Please check your connection or email legal@hallowaypryce.com directly.', 'err');
+        say('Your enquiry could not be sent. Please check your connection or email info@hallowaypryce.com directly.', 'err');
         btn.disabled = false; btn.textContent = 'SEND ENQUIRY';
       });
   });
