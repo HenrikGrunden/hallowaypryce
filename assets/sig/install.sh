@@ -70,7 +70,7 @@ trap 'rm -rf "$imgdir"' EXIT
 newid() { uuidgen 2>/dev/null || printf '%s-%s' "$(date +%s)" "$RANDOM$RANDOM"; }
 
 write_sig() {
-  local f="$1" body="$2" msgid="" boundary url file name mime cid try parts=""
+  local f="$1" body="$2" msgid="" boundary url file name mime cid try from to parts=""
   [ -f "$f" ] && msgid=$(grep -m1 -i '^Message-Id:' "$f" | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r')
   [ -z "$msgid" ] && msgid="<$(newid)>"
   boundary="Apple-Mail=_$(newid)"
@@ -81,6 +81,8 @@ write_sig() {
     [ -s "$file" ] || { echo "  (kunde inte hämta $name, behåller webbadressen)"; continue; }
     case "$name" in *.gif) mime=image/gif;; *.jpg) mime=image/jpeg;; *) mime=image/png;; esac
     cid=$(newid)
+    from="src=\"$url\""; to="apple-inline=\"yes\" src=\"cid:$cid\""
+    body=${body//"$from"/$to}
     body=${body//"$url"/cid:$cid}
     parts+=$(printf '\n--%s\nContent-Transfer-Encoding: base64\nContent-Disposition: inline;\n\tfilename=%s\nContent-Type: %s;\n\tx-unix-mode=0644;\n\tname="%s"\nContent-Id: <%s>\n\n%s\n' \
       "$boundary" "$name" "$mime" "$name" "$cid" "$(base64 < "$file" | tr -d '\n' | fold -w 76)")
