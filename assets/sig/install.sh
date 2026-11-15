@@ -61,19 +61,38 @@ fi
 backup="$HOME/Desktop/Signatur-backup"; mkdir -p "$backup"
 stamp=$(date +%Y%m%d-%H%M%S)
 
-# Always write a clean single-part HTML signature. Mail sometimes creates empty
-# signatures as multipart/related; reusing that header breaks the file.
+# Write the signature as multipart/related with every image embedded, the same
+# way Mail stores a pasted image. Mail then never has to fetch anything from the
+# web, so images show in Settings and in new messages even when remote content
+# is blocked. An image that cannot be downloaded keeps its web address.
+imgdir=$(mktemp -d "${TMPDIR:-/tmp}/hp-sig.XXXXXX")
+trap 'rm -rf "$imgdir"' EXIT
+newid() { uuidgen 2>/dev/null || printf '%s-%s' "$(date +%s)" "$RANDOM$RANDOM"; }
+
 write_sig() {
-  local f="$1" body="$2" msgid=""
+  local f="$1" body="$2" msgid="" boundary url file name mime cid try parts=""
   [ -f "$f" ] && msgid=$(grep -m1 -i '^Message-Id:' "$f" | sed 's/^[^:]*:[[:space:]]*//' | tr -d '\r')
-  [ -z "$msgid" ] && msgid="<$(uuidgen 2>/dev/null || date +%s)>"
+  [ -z "$msgid" ] && msgid="<$(newid)>"
+  boundary="Apple-Mail=_$(newid)"
+  for url in $(printf '%s' "$body" | grep -oE 'https://www\.hallowaypryce\.com/assets/sig/[A-Za-z0-9._-]+\.(png|gif|jpg)(\?[A-Za-z0-9=&._-]*)?' | sort -u); do
+    name=${url##*/}; name=${name%%\?*}
+    file="$imgdir/$name"
+    for try in 1 2 3; do [ -s "$file" ] && break; curl -fsL "$url" -o "$file" || { rm -f "$file"; sleep 1; }; done
+    [ -s "$file" ] || { echo "  (kunde inte hämta $name, behåller webbadressen)"; continue; }
+    case "$name" in *.gif) mime=image/gif;; *.jpg) mime=image/jpeg;; *) mime=image/png;; esac
+    cid=$(newid)
+    body=${body//"$url"/cid:$cid}
+    parts+=$(printf '\n--%s\nContent-Transfer-Encoding: base64\nContent-Disposition: inline;\n\tfilename=%s\nContent-Type: %s;\n\tx-unix-mode=0644;\n\tname="%s"\nContent-Id: <%s>\n\n%s\n' \
+      "$boundary" "$name" "$mime" "$name" "$cid" "$(base64 < "$file" | tr -d '\n' | fold -w 76)")
+  done
   {
-    printf 'Content-Transfer-Encoding: 7bit\n'
-    printf 'Content-Type: text/html;\n\tcharset=us-ascii\n'
+    printf 'Content-Type: multipart/related;\n\ttype="text/html";\n\tboundary="%s"\n' "$boundary"
     printf 'Message-Id: %s\n' "$msgid"
     printf 'Mime-Version: 1.0 (Mac OS X Mail 16.0)\n'
     printf '\n'
-    printf '%s\n' "$body"
+    printf -- '--%s\nContent-Transfer-Encoding: 7bit\nContent-Type: text/html;\n\tcharset=us-ascii\n\n%s\n' "$boundary" "$body"
+    printf '%s\n' "$parts"
+    printf -- '--%s--\n' "$boundary"
   } > "$f.tmp"
 }
 
@@ -93,7 +112,9 @@ install_one() {
     return 1
   fi
   local body
-  body=$(curl -fsL "$BASE/$key.txt") || { echo "Kunde inte hämta $key.txt"; return 1; }
+  local try
+  for try in 1 2 3; do body=$(curl -fsL "$BASE/$key.txt") && break; body=""; sleep 1; done
+  [ -n "$body" ] || { echo "Kunde inte hämta $key.txt"; return 1; }
   while IFS='|' read -r n id d; do
     local f="$d/$id.mailsignature"
     if [ -f "$f" ]; then
